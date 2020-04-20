@@ -35,10 +35,9 @@ class UserSearchAdapter(private val listUser: ArrayList<User>) :
 
     inner class UserSearchViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
         fun bind(user: User) {
-            val url = "https://avatars1.githubusercontent.com/u/${user.id}?v=4"
             with(itemView) {
                 Glide.with(itemView.context)
-                    .load(url)
+                    .load(user.photo)
                     .into(img_photo)
                 txt_name.text = user.username
                 txt_description.text = user.name

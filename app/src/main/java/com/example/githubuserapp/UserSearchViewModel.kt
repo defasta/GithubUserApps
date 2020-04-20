@@ -34,6 +34,7 @@ class UserSearchViewModel : ViewModel(){
                     for (i in 0 until list.length()) {
                         val userList = list.getJSONObject(i)
                         var user = User()
+                        user.photo = userList.getString("avatar_url")
                         user.id = userList.getInt("id")
                         user.username = userList.getString("login")
                         listItems.add(user)
